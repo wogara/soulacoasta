@@ -2,9 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'VT323';
+  src: url('/fonts/VT323-Regular.ttf') format('truetype');
+  font-weight:normal;
+  font-style:normal;
+} 
+
 /* Custom global styles */
 body {
   @apply bg-black text-white;
+  font-family: 'VT323', sans-serif;
 }
 
 /* Custom utility class */
@@ -12,4 +20,8 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+.invert-svg {
+  filter: invert(1);
 }
