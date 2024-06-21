@@ -63,7 +63,7 @@ export default function SubscribeModal({ isOpen, onClose }) {
         ) : (
           <div>
             <h2 className="text-2xl mb-4">Thank You!</h2>
-            <p className="mb-4">You've been added to our email list.</p>
+            <p className="mb-4">You have been added to our email list.</p>
             <button
               onClick={onClose}
               className="mt-4 px-4 py-2 bg-black text-white rounded hover:bg-gray-700"
