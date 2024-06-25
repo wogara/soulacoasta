@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from 'react';
 
 export default function SubscribeModal({ isOpen, onClose }) {
   const modalRef = useRef(null);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
@@ -14,12 +14,12 @@ export default function SubscribeModal({ isOpen, onClose }) {
       }
     };
     if (isOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
     } else {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     }
     return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen, onClose]);
 
@@ -76,4 +76,3 @@ export default function SubscribeModal({ isOpen, onClose }) {
     </div>
   );
 }
-

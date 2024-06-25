@@ -1,12 +1,12 @@
-"use client";
-import { useCallback, useEffect, useRef } from "react";
-import useEmblaCarousel from "embla-carousel-react";
-import "./embla.css";
+'use client';
+import { useCallback, useEffect, useRef } from 'react';
+import useEmblaCarousel from 'embla-carousel-react';
+import './embla.css';
 import {
   NextButton,
   PrevButton,
   usePrevNextButtons,
-} from "./EmblaCarouselArrowButtons";
+} from './EmblaCarouselArrowButtons';
 
 const TWEEN_FACTOR_BASE = 0.52;
 
@@ -28,7 +28,7 @@ const EmblaCarousel = (props) => {
 
   const setTweenNodes = useCallback((emblaApi) => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
-      return slideNode.querySelector(".embla__slide__number");
+      return slideNode.querySelector('.embla__slide__number');
     });
   }, []);
 
@@ -40,7 +40,7 @@ const EmblaCarousel = (props) => {
     const engine = emblaApi.internalEngine();
     const scrollProgress = emblaApi.scrollProgress();
     const slidesInView = emblaApi.slidesInView();
-    const isScrollEvent = eventName === "scroll";
+    const isScrollEvent = eventName === 'scroll';
 
     emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
       let diffToTarget = scrollSnap - scrollProgress;
@@ -82,11 +82,11 @@ const EmblaCarousel = (props) => {
     tweenScale(emblaApi);
 
     emblaApi
-      .on("reInit", setTweenNodes)
-      .on("reInit", setTweenFactor)
-      .on("reInit", tweenScale)
-      .on("scroll", tweenScale)
-      .on("slideFocus", tweenScale);
+      .on('reInit', setTweenNodes)
+      .on('reInit', setTweenFactor)
+      .on('reInit', tweenScale)
+      .on('scroll', tweenScale)
+      .on('slideFocus', tweenScale);
   }, [emblaApi, tweenScale]);
 
   return (

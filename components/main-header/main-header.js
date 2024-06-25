@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import SubscribeModal from "../modals/subscribe-modal";
+import { useState } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import SubscribeModal from '../modals/subscribe-modal';
 
 export default function MainHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ export default function MainHeader() {
   const currentPath = usePathname();
 
   const isActive = (path) => {
-    return currentPath === path ? " border border-white" : "";
+    return currentPath === path ? ' border border-white' : '';
   };
 
   const toggleMenu = () => {
@@ -41,7 +41,7 @@ export default function MainHeader() {
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
-              className={`burger-menu text-white hover:text-gray-400 p-2 border border-white rounded ${isMenuOpen ? "open" : ""}`}
+              className={`burger-menu text-white hover:text-gray-400 p-2 border border-white rounded ${isMenuOpen ? 'open' : ''}`}
             >
               ☰
             </button>
@@ -50,7 +50,7 @@ export default function MainHeader() {
             <li>
               <Link
                 href="/about"
-                className={`text-white hover:text-gray-400 p-2${isActive("/about")}`}
+                className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
               >
                 ABOUT
               </Link>
@@ -58,7 +58,7 @@ export default function MainHeader() {
             <li>
               <Link
                 href="/music"
-                className={`text-white hover:text-gray-400 p-2${isActive("/music")}`}
+                className={`text-white hover:text-gray-400 p-2${isActive('/music')}`}
               >
                 MUSIC
               </Link>
@@ -66,7 +66,7 @@ export default function MainHeader() {
             <li>
               <Link
                 href="/visuals"
-                className={`text-white hover:text-gray-400 p-2${isActive("/visuals")}`}
+                className={`text-white hover:text-gray-400 p-2${isActive('/visuals')}`}
               >
                 VISUALS
               </Link>
@@ -74,7 +74,7 @@ export default function MainHeader() {
             <li>
               <Link
                 href="/shows"
-                className={`text-white hover:text-gray-400 p-2${isActive("/shows")}`}
+                className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
               >
                 SHOWS
               </Link>
@@ -82,13 +82,16 @@ export default function MainHeader() {
             <li>
               <Link
                 href="/socials"
-                className={`text-white hover:text-gray-400 p-2${isActive("/socials")}`}
+                className={`text-white hover:text-gray-400 p-2${isActive('/socials')}`}
               >
                 SOCIALS
               </Link>
             </li>
           </ul>
-          <button onClick={openModal} className="hidden md:block text-white hover:text-gray-400 p-2 border border-white rounded">
+          <button
+            onClick={openModal}
+            className="hidden md:block text-white hover:text-gray-400 p-2 border border-white rounded"
+          >
             SUBSCRIBE
           </button>
         </div>
@@ -98,7 +101,7 @@ export default function MainHeader() {
               <li>
                 <Link
                   href="/about"
-                  className={`text-white hover:text-gray-400 p-2${isActive("/about")}`}
+                  className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
                   onClick={closeMenu}
                 >
                   ABOUT
@@ -107,7 +110,7 @@ export default function MainHeader() {
               <li>
                 <Link
                   href="/music"
-                  className={`text-white hover:text-gray-400 p-2${isActive("/music")}`}
+                  className={`text-white hover:text-gray-400 p-2${isActive('/music')}`}
                   onClick={closeMenu}
                 >
                   MUSIC
@@ -116,7 +119,7 @@ export default function MainHeader() {
               <li>
                 <Link
                   href="/visuals"
-                  className={`text-white hover:text-gray-400 p-2${isActive("/visuals")}`}
+                  className={`text-white hover:text-gray-400 p-2${isActive('/visuals')}`}
                   onClick={closeMenu}
                 >
                   VISUALS
@@ -125,7 +128,7 @@ export default function MainHeader() {
               <li>
                 <Link
                   href="/shows"
-                  className={`text-white hover:text-gray-400 p-2${isActive("/shows")}`}
+                  className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
                   onClick={closeMenu}
                 >
                   SHOWS
@@ -134,14 +137,17 @@ export default function MainHeader() {
               <li>
                 <Link
                   href="/socials"
-                  className={`text-white hover:text-gray-400 p-2${isActive("/socials")}`}
+                  className={`text-white hover:text-gray-400 p-2${isActive('/socials')}`}
                   onClick={closeMenu}
                 >
                   SOCIALS
                 </Link>
               </li>
               <li>
-                <button onClick={openModal} className="text-white hover:text-gray-400 p-2 border border-white rounded">
+                <button
+                  onClick={openModal}
+                  className="text-white hover:text-gray-400 p-2 border border-white rounded"
+                >
                   SUBSCRIBE
                 </button>
               </li>

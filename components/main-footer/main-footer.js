@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { useState, useEffect, useRef } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPlay, faPause } from "@fortawesome/free-solid-svg-icons";
-import ContactModal from "../modals/contact-modal";
+import { useState, useEffect, useRef } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import ContactModal from '../modals/contact-modal';
 
 export default function ButtonGroup() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -11,8 +11,8 @@ export default function ButtonGroup() {
   const audioRef = useRef(null);
 
   useEffect(() => {
-    const audio = new Audio("/sample-12s.mp3");
-    audio.preload = "auto";
+    const audio = new Audio('/sample-12s.mp3');
+    audio.preload = 'auto';
     audioRef.current = audio;
     return () => {
       audioRef.current.pause();
@@ -41,25 +41,25 @@ export default function ButtonGroup() {
 
   return (
     <div>
-    <div className="bg-black border-b-2 border-white p-4 fixed bottom-0 left-0 w-full z-50">
-      <div className="flex justify-between">
-        <button className="text-white hover:text-gray-400 p-2 border border-white">
-          Shop
-        </button>
-        <button
-          onClick={togglePlayPause}
-          className="text-white hover:text-gray-400 p-2 border border-white rounded-full h-12 w-12 flex items-center justify-center"
-        >
-          <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
-        </button>
-        <button
-          onClick={openModal}
-          className="text-white hover:text-gray-400 p-2 border border-white"
-        >
-          Contact
-        </button>
+      <div className="bg-black border-b-2 border-white p-4 fixed bottom-0 left-0 w-full z-50">
+        <div className="flex justify-between">
+          <button className="text-white hover:text-gray-400 p-2 border border-white">
+            Shop
+          </button>
+          <button
+            onClick={togglePlayPause}
+            className="text-white hover:text-gray-400 p-2 border border-white rounded-full h-12 w-12 flex items-center justify-center"
+          >
+            <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
+          </button>
+          <button
+            onClick={openModal}
+            className="text-white hover:text-gray-400 p-2 border border-white"
+          >
+            Contact
+          </button>
+        </div>
       </div>
-    </div>
       <ContactModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
