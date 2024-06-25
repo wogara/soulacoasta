@@ -1,37 +1,11 @@
 'use client';
 
-import { useState, useEffect, useRef } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { useState } from 'react';
 import ContactModal from '../modals/contact-modal';
+import MusicPlayer from '../music-player/music-player';
 
 export default function ButtonGroup() {
-  const [isPlaying, setIsPlaying] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const audioRef = useRef(null);
-
-  useEffect(() => {
-    const audio = new Audio('/sample-12s.mp3');
-    audio.preload = 'auto';
-    audioRef.current = audio;
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, []);
-
-  const togglePlayPause = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying((prev) => !prev);
-    }
-  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -48,12 +22,7 @@ export default function ButtonGroup() {
           <button className="text-white hover:text-gray-400 p-2 border border-white h-12 w-24 flex items-center justify-center">
             Shop
           </button>
-          <button
-            onClick={togglePlayPause}
-            className="text-white hover:text-gray-400 p-2 border border-white rounded-full h-12 w-12 flex items-center justify-center"
-          >
-            <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
-          </button>
+          <MusicPlayer />
           <button
             onClick={openModal}
             className="text-white hover:text-gray-400 p-2 border border-white h-12 w-24 flex items-center justify-center"
