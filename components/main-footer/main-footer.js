@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import ContactModal from '../modals/contact-modal';
+import ConnectModal from '../modals/connect-modal';
 import MusicPlayer from '../music-player/music-player';
 
 export default function ButtonGroup() {
@@ -27,11 +27,11 @@ export default function ButtonGroup() {
             onClick={openModal}
             className="text-white hover:text-gray-400 p-2 border border-white h-12 w-24 flex items-center justify-center"
           >
-            Contact
+            Connect
           </button>
         </div>
       </div>
-      <ContactModal isOpen={isModalOpen} onClose={closeModal} />
+      <ConnectModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }
