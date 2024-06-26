@@ -1,7 +1,18 @@
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Home</h1>
+    <main className="relative flex min-h-screen flex-col items-center justify-between bg-black">
+      <div className="absolute inset-0 z-0 flex items-center justify-center">
+        <picture>
+          <source srcSet="/images/giphy.webp" type="image/webp" />
+          <source srcSet="/cover.jpg" type="image/jpeg" />
+          <img
+            src="/images/giphy.webp"
+            alt="Background"
+            className="max-w-full max-h-full"
+            style={{ objectFit: 'contain' }}
+          />
+        </picture>
+      </div>
     </main>
   );
 }
