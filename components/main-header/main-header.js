@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import SubscribeModal from '../modals/subscribe-modal';
 
 export default function MainHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,14 +20,6 @@ export default function MainHeader() {
 
   const closeMenu = () => {
     setIsMenuOpen(false);
-  };
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
   };
 
   return (
@@ -49,20 +40,13 @@ export default function MainHeader() {
           <ul className="hidden md:flex justify-center space-x-4">
             <li>
               <Link
-                href="/about"
-                className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
+                href="/shows"
+                className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
               >
-                ABOUT
+                SHOWS
               </Link>
             </li>
-            <li>
-              <Link
-                href="/music"
-                className={`text-white hover:text-gray-400 p-2${isActive('/music')}`}
-              >
-                MUSIC
-              </Link>
-            </li>
+
             <li>
               <Link
                 href="/visuals"
@@ -73,49 +57,27 @@ export default function MainHeader() {
             </li>
             <li>
               <Link
-                href="/shows"
-                className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
+                href="/about"
+                className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
               >
-                SHOWS
-              </Link>
-            </li>
-            <li>
-              <Link
-                href="/socials"
-                className={`text-white hover:text-gray-400 p-2${isActive('/socials')}`}
-              >
-                SOCIALS
+                ABOUT
               </Link>
             </li>
           </ul>
-          <button
-            onClick={openModal}
-            className="hidden md:block text-white hover:text-gray-400 p-2 border border-white rounded"
-          >
-            SUBSCRIBE
-          </button>
         </div>
         {isMenuOpen && (
           <div className="md:hidden mt-2">
             <ul className="flex flex-col items-center space-y-4">
               <li>
                 <Link
-                  href="/about"
-                  className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
+                  href="/shows"
+                  className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
                   onClick={closeMenu}
                 >
-                  ABOUT
+                  SHOWS
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/music"
-                  className={`text-white hover:text-gray-400 p-2${isActive('/music')}`}
-                  onClick={closeMenu}
-                >
-                  MUSIC
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/visuals"
@@ -127,35 +89,17 @@ export default function MainHeader() {
               </li>
               <li>
                 <Link
-                  href="/shows"
-                  className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
+                  href="/about"
+                  className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
                   onClick={closeMenu}
                 >
-                  SHOWS
+                  ABOUT
                 </Link>
-              </li>
-              <li>
-                <Link
-                  href="/socials"
-                  className={`text-white hover:text-gray-400 p-2${isActive('/socials')}`}
-                  onClick={closeMenu}
-                >
-                  SOCIALS
-                </Link>
-              </li>
-              <li>
-                <button
-                  onClick={openModal}
-                  className="text-white hover:text-gray-400 p-2 border border-white rounded"
-                >
-                  SUBSCRIBE
-                </button>
               </li>
             </ul>
           </div>
         )}
       </nav>
-      <SubscribeModal isOpen={isModalOpen} onClose={closeModal} />
     </div>
   );
 }
