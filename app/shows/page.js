@@ -1,6 +1,7 @@
 import { supabase } from '@/lib/db';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 
 export const revalidate = 60;
 
