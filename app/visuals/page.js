@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 import EmblaCarousel from '@/components/carousel/EmblaCarousel';
+import Link from 'next/link';
 
 const OPTIONS = { loop: true };
 const SLIDE_COUNT = 5;
@@ -17,18 +18,18 @@ export default function VisualsPage() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <EmblaCarousel slides={slides} options={OPTIONS} />
-      <a
+      <Link
         href="/shows"
         className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretLeft} />
-      </a>
-      <a
+      </Link>
+      <Link
         href="/about"
         className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretRight} />
-      </a>
+      </Link>
     </main>
   );
 }
