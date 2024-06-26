@@ -18,13 +18,13 @@ export default function VisualsPage() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <EmblaCarousel slides={slides} options={OPTIONS} />
       <a
-        href="/music"
+        href="/shows"
         className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretLeft} />
       </a>
       <a
-        href="/shows"
+        href="/about"
         className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretRight} />
