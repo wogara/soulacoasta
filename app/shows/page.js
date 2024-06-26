@@ -48,13 +48,13 @@ export default async function ShowsPage() {
         </table>
       </div>
       <a
-        href="/visuals"
+        href="/about"
         className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretLeft} />
       </a>
       <a
-        href="/shows"
+        href="/visuals"
         className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretRight} />
