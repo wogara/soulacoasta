@@ -47,18 +47,18 @@ export default async function ShowsPage() {
           </tbody>
         </table>
       </div>
-      <a
+      <Link
         href="/about"
         className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretLeft} />
-      </a>
-      <a
+      </Link>
+      <Link
         href="/visuals"
         className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
       >
         <FontAwesomeIcon icon={faCaretRight} />
-      </a>
+      </Link>
     </main>
   );
 }
