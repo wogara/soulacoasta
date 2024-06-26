@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
 
 export default function AboutPage() {
   return (
@@ -71,6 +73,18 @@ export default function AboutPage() {
           />
         </div>
       </div>
+      <a
+        href="/visuals"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+      >
+        <FontAwesomeIcon icon={faCaretLeft} />
+      </a>
+      <a
+        href="/shows"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+      >
+        <FontAwesomeIcon icon={faCaretRight} />
+      </a>
     </main>
   );
 }
