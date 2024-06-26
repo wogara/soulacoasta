@@ -47,9 +47,20 @@ export default function ConnectModal({ isOpen, onClose }) {
           X
         </button>
         <h2 className="text-2xl mb-4">Contact Me</h2>
-        <p className="mb-2">E-mail: sample@gmail.com</p>
-        <p className="mb-2">Twitter: sample-twitter</p>
-        <p className="mb-4">Instagram: sample-instagram</p>
+        <p className="mb-0">Bookings</p>
+        <p className="mb-4">E-mail: sample@gmail.com</p>
+
+        <p className="mb-0">Socials</p>
+        <p className="mb-0">Instagram: sample-instagram</p>
+        <p className="mb-0">Tiktok: sample-tiktok</p>
+        <p className="mb-4">Twitter: sample-twitter</p>
+
+        <p className="mb-0">Music</p>
+        <p className="mb-0">Soundcloud: sample-soundcloud</p>
+        <p className="mb-0">Bandcamp: sample-bandcamp</p>
+        <p className="mb-0">Spotify: sample-spotify</p>
+        <p className="mb-0">Apple Music: sample-apple-music</p>
+        <p className="mb-0">Youtube: sample-youtube</p>
         <hr className="border-t border-gray-600 my-4" />
         <div>
           {!submitted ? (
