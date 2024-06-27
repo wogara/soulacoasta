@@ -14,7 +14,7 @@ export default function VisualsPage() {
     .map(file => `/images/visuals/${file}`);
   
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between p-5 md:p-0">
       <EmblaCarousel slides={slides} options={OPTIONS} />
       <Link
         href="/shows"
