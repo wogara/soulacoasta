@@ -27,6 +27,7 @@ const EmblaCarousel = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   const setTweenNodes = useCallback((emblaApi) => {
+    console.log('tween nodes');
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
       return slideNode.querySelector('.embla__slide__number');
     });
@@ -36,10 +37,25 @@ const EmblaCarousel = (props) => {
     tweenFactor.current = TWEEN_FACTOR_BASE * emblaApi.scrollSnapList().length;
   }, []);
 
+  const updateSlideClasses = useCallback((emblaApi) => {
+    console.log('update classes');
+    const slides = emblaApi.slideNodes();
+    const centerIndex = emblaApi.selectedScrollSnap();
+    slides.forEach((slide, index) => {
+      if (index === centerIndex) {
+        //slide.classList.remove('embla__slide__waiting');
+      } else {
+        //slide.classList.add('embla__slide__waiting');
+      }
+    });
+  }, []);
+
   const tweenScale = useCallback((emblaApi, eventName) => {
+    console.log('tween scale with event: ' + eventName);
     const engine = emblaApi.internalEngine();
     const scrollProgress = emblaApi.scrollProgress();
     const slidesInView = emblaApi.slidesInView();
+    console.log(slidesInView);
     const isScrollEvent = eventName === 'scroll';
 
     emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
@@ -70,24 +86,27 @@ const EmblaCarousel = (props) => {
         const scale = numberWithinRange(tweenValue, 0, 1).toString();
         const tweenNode = tweenNodes.current[slideIndex];
         tweenNode.style.transform = `scale(${scale})`;
+        updateSlideClasses(emblaApi);
       });
     });
   }, []);
 
   useEffect(() => {
     if (!emblaApi) return;
-
+    //updateSlideClasses(emblaApi); // Initial update
     setTweenNodes(emblaApi);
     setTweenFactor(emblaApi);
     tweenScale(emblaApi);
-
     emblaApi
+      //.on('reInit', updateSlideClasses)
+
       .on('reInit', setTweenNodes)
       .on('reInit', setTweenFactor)
       .on('reInit', tweenScale)
       .on('scroll', tweenScale)
-      .on('slideFocus', tweenScale);
-  }, [emblaApi, tweenScale]);
+      .on('slideFocus', tweenScale)
+      .on('select', updateSlideClasses);
+  }, [emblaApi, tweenScale, updateSlideClasses]);
 
   return (
     <div className="embla">
