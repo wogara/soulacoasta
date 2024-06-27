@@ -14,7 +14,7 @@ export default async function ShowsPage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-2 md:p-24">
+    <main className="flex min-h-screen flex-col items-center justify-between py-24 px-2 md:px-24">
       <div className="container mx-auto p-4 relative">
         <h1 className="text-2xl mb-4">Upcoming</h1>
         <table className="min-w-full bg-black mb-8">
