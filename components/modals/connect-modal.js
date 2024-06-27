@@ -48,16 +48,16 @@ export default function ConnectModal({ isOpen, onClose }) {
         </button>
         <h2 className="text-2xl mb-4">Connect With Me</h2>
 
-        <h3 className="text-xl mb-2">Bookings</h3>
+        <h3 className="text-xl mb-1">Bookings</h3>
         <p className="mb-4">E-mail: soulacoastainc@gmail.com</p>
 
-        <h3 className="text-xl mb-2">Socials</h3>
+        <h3 className="text-xl mb-1">Socials</h3>
         <p className="mb-0"><a href="https://www.instagram.com/soulacoasta/" target="_blank" rel="noopener noreferrer">Instagram</a></p>
         <p className="mb-0"><a href="https://www.tiktok.com/@isoulacoasta" target="_blank" rel="noopener noreferrer">Tiktok</a></p>
         <p className="mb-0"><a href="https://www.twitter.com/soulacoasta" target="_blank" rel="noopener noreferrer">Twitter</a></p>
         <p className="mb-4"></p>
 
-        <h3 className="text-xl mb-2">Music</h3>
+        <h3 className="text-xl mb-1">Music</h3>
         <p className="mb-0"><a href="https://soundcloud.com/soula-coasta" target="_blank" rel="noopener noreferrer">Soundcloud</a></p>
         <p className="mb-0"><a href="https://soulacoasta.bandcamp.com/" target="_blank" rel="noopener noreferrer">Bandcamp</a></p>
         <p className="mb-0"><a href="https://www.youtube.com/@soulacoasta" target="_blank" rel="noopener noreferrer">Youtube</a></p>
