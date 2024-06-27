@@ -20,10 +20,10 @@ export default async function ShowsPage() {
         <table className="min-w-full bg-black border border-white">
           <thead>
             <tr>
-              <th className="py-2 px-4 border">Date</th>
-              <th className="py-2 px-4 border">City</th>
-              <th className="py-2 px-4 border">Venue</th>
-              <th className="py-2 px-4 border">Tickets</th>
+              <th className="py-2 px-4 border text-left">Date</th>
+              <th className="py-2 px-4 border text-left">City</th>
+              <th className="py-2 px-4 border text-left">Venue</th>
+              <th className="py-2 px-4 border text-left">Tickets</th>
             </tr>
           </thead>
           <tbody>
