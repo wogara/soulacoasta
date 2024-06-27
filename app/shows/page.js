@@ -20,7 +20,6 @@ export default async function ShowsPage() {
         <table className="min-w-full bg-black border border-white">
           <thead>
             <tr>
-              <th className="py-2 px-4 border">Flyer</th>
               <th className="py-2 px-4 border">Date</th>
               <th className="py-2 px-4 border">City</th>
               <th className="py-2 px-4 border">Venue</th>
@@ -30,9 +29,6 @@ export default async function ShowsPage() {
           <tbody>
             {shows.map(show => (
               <tr key={show.id}>
-                <td className="py-2 px-4 border">
-                  <img src={show.flyer} alt={`${show.city} flyer`} className="w-24 h-24 object-cover" />
-                </td>
                 <td className="py-2 px-4 border">{new Date(show.date).toLocaleDateString()}</td>
                 <td className="py-2 px-4 border">{show.city}</td>
                 <td className="py-2 px-4 border">{show.venue}</td>
