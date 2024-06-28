@@ -73,13 +73,13 @@ export default async function ShowsPage() {
       </div>
       <Link
         href="/about"
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer hidden md:block"
       >
         <FontAwesomeIcon icon={faCaretLeft} />
       </Link>
       <Link
         href="/visuals"
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer hidden md:block"
       >
         <FontAwesomeIcon icon={faCaretRight} />
       </Link>
