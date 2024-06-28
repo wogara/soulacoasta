@@ -102,10 +102,10 @@ export default function AboutPage() {
               className="w-full h-auto object-cover"
             />
           </div>
-          <div className="relative z-10 p-0 flex flex-col justify-start h-full">
-            <div className="bg-black bg-opacity-70 p-2 rounded overflow-y-auto max-h-full">
+          <div className="relative z-10 p-0 flex flex-col justify-start h-auto">
+            <div className="bg-black bg-opacity-70 p-2 mb-24 rounded overflow-hidden h-5/6">
               <h2 className="text-2xl font-bold mb-4">About Me</h2>
-              <p className="text-base">
+              <p className="text-base overflow-hidden">
                 Marlon Orlando Cameron, known professionally as SOULACOASTA, was
                 born in Kingston, Jamaica where he was surrounded by music in
                 his formative years. At the age of 10, he moved to the United
