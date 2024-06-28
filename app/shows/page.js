@@ -23,7 +23,7 @@ export default async function ShowsPage() {
               <th className="py-2 px-4 text-left border-b border-white">Date</th>
               <th className="py-2 px-4 text-left border-b border-white">City</th>
               <th className="py-2 px-4 text-left border-b border-white">Venue</th>
-              <th className="py-2 px-4 text-left border-b border-white">Tickets</th>
+              <th className="py-2 px-4 text-left border-b border-white">Link</th>
             </tr>
           </thead>
           <tbody>
@@ -33,8 +33,8 @@ export default async function ShowsPage() {
                 <td className="py-2 px-4 border-b border-white">{show.city}</td>
                 <td className="py-2 px-4 border-b border-white">{show.venue}</td>
                 <td className="py-2 px-4 border-b border-white">
-                  {show.tickets ? (
-                    <a href={show.tickets} target="_blank" rel="noopener noreferrer" className="text-blue-500">Buy Tickets</a>
+                  {show.link ? (
+                    <a href={show.link} target="_blank" rel="noopener noreferrer" className="text-white underline">Link</a>
                   ) : (
                     'N/A'
                   )}
@@ -50,7 +50,7 @@ export default async function ShowsPage() {
               <th className="py-2 px-4 text-left border-b border-white">Date</th>
               <th className="py-2 px-4 text-left border-b border-white">City</th>
               <th className="py-2 px-4 text-left border-b border-white">Venue</th>
-              <th className="py-2 px-4 text-left border-b border-white">Tickets</th>
+              <th className="py-2 px-4 text-left border-b border-white">Link</th>
             </tr>
           </thead>
           <tbody>
@@ -60,8 +60,8 @@ export default async function ShowsPage() {
                 <td className="py-2 px-4 border-b border-white">{show.city}</td>
                 <td className="py-2 px-4 border-b border-white">{show.venue}</td>
                 <td className="py-2 px-4 border-b border-white">
-                  {show.tickets ? (
-                    <a href={show.tickets} target="_blank" rel="noopener noreferrer" className="text-blue-500">Buy Tickets</a>
+                  {show.link ? (
+                    <a href={show.link} target="_blank" rel="noopener noreferrer" className="text-white underline">Link</a>
                   ) : (
                     'N/A'
                   )}
