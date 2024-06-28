@@ -12,8 +12,9 @@ export default function AboutPage() {
         flex-col
         items-center
         justify-between
-        p-8
-        md:p-16
+        py-16
+        px-8
+        md:px-16
         bg-black
         text-white
       "
