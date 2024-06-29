@@ -60,7 +60,8 @@ export default async function ShowsPage() {
                     {show.venue}
                   </td>
                   <td className="py-2 px-4 border-b border-white">
-                    {show.link ? (
+                    {console.log('show.link:', show.link)}
+                    {show.link !== 'N/A' ? (
                       <a
                         href={show.link}
                         target="_blank"
@@ -70,7 +71,7 @@ export default async function ShowsPage() {
                         Link
                       </a>
                     ) : (
-                      'N/A'
+                      ''
                     )}
                   </td>
                 </tr>
@@ -108,7 +109,7 @@ export default async function ShowsPage() {
                     {show.venue}
                   </td>
                   <td className="py-2 px-4 border-b border-white">
-                    {show.link ? (
+                    {show.link !== 'N/A' ? (
                       <a
                         href={show.link}
                         target="_blank"
@@ -118,7 +119,7 @@ export default async function ShowsPage() {
                         Link
                       </a>
                     ) : (
-                      'N/A'
+                      ''
                     )}
                   </td>
                 </tr>

@@ -13,7 +13,7 @@ export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const audioRef = useRef(null);
-  const tracks = ['/sample-9s.mp3', '/sample-12s.mp3', '/sample-15s.mp3'];
+  const tracks = ['/audio/SOULACOASTA.mp3','/audio/futera_riddim_I.mp3','/audio/stick_it_XII.mp3'];
 
   useEffect(() => {
     const audio = new Audio(tracks[currentTrackIndex]);
