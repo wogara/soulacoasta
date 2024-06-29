@@ -38,20 +38,20 @@ export default async function ShowsPage() {
     return (
       <main className="flex min-h-screen flex-col items-center justify-between py-24 px-2 md:px-24">
         <div className="container mx-auto p-4 relative">
-          <h1 className="text-2xl mb-4">Upcoming</h1>
+          <h1 className="text-3xl font-bold mb-4">Upcoming</h1>
           <table className="min-w-full bg-black mb-8">
             <thead>
               <tr>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   Date
                 </th>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   City
                 </th>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   Venue
                 </th>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   Link
                 </th>
               </tr>
@@ -59,16 +59,16 @@ export default async function ShowsPage() {
             <tbody>
               {upcomingShows.map((show) => (
                 <tr key={show.id}>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {formatDate(show.date)}
                   </td>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {show.city}
                   </td>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {show.venue}
                   </td>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {show.link !== 'N/A' ? (
                       <a
                         href={show.link}
@@ -86,20 +86,20 @@ export default async function ShowsPage() {
               ))}
             </tbody>
           </table>
-          <h1 className="text-2xl mb-4">Past</h1>
+          <h1 className="text-3xl font-bold mb-4">Past</h1>
           <table className="min-w-full bg-black">
             <thead>
               <tr>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   Date
                 </th>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   City
                 </th>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   Venue
                 </th>
-                <th className="py-2 px-4 text-left border-b border-white">
+                <th className="py-2 px-4 text-left border-b border-white text-xl font-semibold">
                   Link
                 </th>
               </tr>
@@ -107,16 +107,16 @@ export default async function ShowsPage() {
             <tbody>
               {pastShows.map((show) => (
                 <tr key={show.id}>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {formatDate(show.date)}
                   </td>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {show.city}
                   </td>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {show.venue}
                   </td>
-                  <td className="py-2 px-4 border-b border-white">
+                  <td className="py-2 px-4 border-b border-white text-lg">
                     {show.link !== 'N/A' ? (
                       <a
                         href={show.link}
