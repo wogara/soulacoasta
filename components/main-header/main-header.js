@@ -26,7 +26,7 @@ export default function MainHeader() {
     <div>
       <nav className="bg-black border-b-2 border-white p-4 fixed top-0 left-0 w-full z-50">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-white text-xl" onClick={closeMenu}>
+          <Link href="/" className="text-white text-2xl p-3" onClick={closeMenu}>
             SOULACOASTA
           </Link>
           <div className="md:hidden">
@@ -41,16 +41,15 @@ export default function MainHeader() {
             <li>
               <Link
                 href="/shows"
-                className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
+                className={`text-white text-xl hover:text-gray-400 p-3${isActive('/shows')}`}
               >
                 SHOWS
               </Link>
             </li>
-
             <li>
               <Link
                 href="/visuals"
-                className={`text-white hover:text-gray-400 p-2${isActive('/visuals')}`}
+                className={`text-white text-xl hover:text-gray-400 p-3${isActive('/visuals')}`}
               >
                 VISUALS
               </Link>
@@ -58,7 +57,7 @@ export default function MainHeader() {
             <li>
               <Link
                 href="/about"
-                className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
+                className={`text-white text-xl hover:text-gray-400 p-3${isActive('/about')}`}
               >
                 ABOUT
               </Link>
@@ -71,17 +70,16 @@ export default function MainHeader() {
               <li>
                 <Link
                   href="/shows"
-                  className={`text-white hover:text-gray-400 p-2${isActive('/shows')}`}
+                  className={`text-white text-xl hover:text-gray-400 p-3${isActive('/shows')}`}
                   onClick={closeMenu}
                 >
                   SHOWS
                 </Link>
               </li>
-
               <li>
                 <Link
                   href="/visuals"
-                  className={`text-white hover:text-gray-400 p-2${isActive('/visuals')}`}
+                  className={`text-white text-xl hover:text-gray-400 p-3${isActive('/visuals')}`}
                   onClick={closeMenu}
                 >
                   VISUALS
@@ -90,7 +88,7 @@ export default function MainHeader() {
               <li>
                 <Link
                   href="/about"
-                  className={`text-white hover:text-gray-400 p-2${isActive('/about')}`}
+                  className={`text-white text-xl hover:text-gray-400 p-3${isActive('/about')}`}
                   onClick={closeMenu}
                 >
                   ABOUT
