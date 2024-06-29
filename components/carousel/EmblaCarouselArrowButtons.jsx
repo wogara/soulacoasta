@@ -47,7 +47,7 @@ export const PrevButton = (props) => {
       type="button"
       {...restProps}
     >
-      <FontAwesomeIcon icon={faCaretLeft} />
+      <FontAwesomeIcon icon={faCaretLeft} size="2x"/>
 
       {children}
     </button>
@@ -63,7 +63,7 @@ export const NextButton = (props) => {
       type="button"
       {...restProps}
     >
-      <FontAwesomeIcon icon={faCaretRight} />
+      <FontAwesomeIcon icon={faCaretRight} size="2x"/>
 
       {children}
     </button>
