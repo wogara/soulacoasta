@@ -26,18 +26,18 @@ export default function ButtonGroup() {
 
   return (
     <div>
-      <div className="bg-black border-b-2 border-white p-4 fixed bottom-0 left-0 w-full z-50">
+      <div className="bg-black border-t-2 border-white p-4 fixed bottom-0 left-0 w-full z-50">
         <div className="flex justify-between items-center">
           <button
             onClick={openShopModal}
-            className="text-white hover:text-gray-400 p-2 border border-white h-12 w-24 flex items-center justify-center"
+            className="text-white hover:text-gray-400 p-2 border border-white h-12 w-32 text-lg flex items-center justify-center"
           >
             Shop
           </button>
           <MusicPlayer />
           <button
             onClick={openConnectModal}
-            className="text-white hover:text-gray-400 p-2 border border-white h-12 w-24 flex items-center justify-center"
+            className="text-white hover:text-gray-400 p-2 border border-white h-12 w-32 text-lg flex items-center justify-center"
           >
             Connect
           </button>
