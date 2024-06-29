@@ -1,7 +1,5 @@
 import { supabase } from '@/lib/db';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCaretRight, faCaretLeft } from '@fortawesome/free-solid-svg-icons';
-import Link from 'next/link';
+import PageArrows from '@/components/page-arrows/page-arrows';
 
 export const revalidate = 60;
 
@@ -128,18 +126,8 @@ export default async function ShowsPage() {
             </tbody>
           </table>
         </div>
-        <Link
-          href="/about"
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer hidden md:block"
-        >
-          <FontAwesomeIcon icon={faCaretLeft} />
-        </Link>
-        <Link
-          href="/visuals"
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 cursor-pointer hidden md:block"
-        >
-          <FontAwesomeIcon icon={faCaretRight} />
-        </Link>
+        <PageArrows link="/" direction="left" />
+        <PageArrows link="/visuals" direction="right" />
       </main>
     );
   }
