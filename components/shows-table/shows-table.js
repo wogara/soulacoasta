@@ -32,16 +32,16 @@ export default function ShowsTable({ shows }) {
       <table className="min-w-full bg-black mb-8">
         <thead>
           <tr>
-            <th className="py-2 px-4 text-left border-b border-white md:text-xl font-semibold w-1/4">
+            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
               Date
             </th>
-            <th className="py-2 px-4 text-left border-b border-white md:text-xl font-semibold w-1/4">
+            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
               City
             </th>
-            <th className="py-2 px-4 text-left border-b border-white md:text-xl font-semibold w-1/4">
+            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
               Venue
             </th>
-            <th className="py-2 px-4 text-left border-b border-white md:text-xl font-semibold w-1/4">
+            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
               Link
             </th>
           </tr>
@@ -53,16 +53,16 @@ export default function ShowsTable({ shows }) {
               onClick={() => openShowModal(show)}
               className="cursor-pointer md:hover:bg-white md:hover:text-black"
             >
-              <td className="py-2 px-4 border-b border-white md:text-lg">
+              <td className="py-2 px-4 border-b border-white text-xs md:text-lg">
                 {formatDate(show.date)}
               </td>
-              <td className="py-2 px-4 border-b border-white md:text-lg">
+              <td className="py-2 px-4 border-b border-white text-xs md:text-lg">
                 {show.city}
               </td>
-              <td className="py-2 px-4 border-b border-white md:text-lg">
+              <td className="py-2 px-4 border-b border-white text-xs md:text-lg">
                 {show.venue}
               </td>
-              <td className="py-2 px-4 border-b border-white md:text-lg">
+              <td className="py-2 px-4 border-b border-white text-xs md:text-lg">
                 {show.link !== 'N/A' ? (
                   <a
                     href={show.link}
