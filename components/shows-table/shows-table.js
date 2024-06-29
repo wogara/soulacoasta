@@ -32,16 +32,16 @@ export default function ShowsTable({ shows }) {
       <table className="min-w-full bg-black mb-8">
         <thead>
           <tr>
-            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
+            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/3 md:w-1/4">
               Date
             </th>
-            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
+            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/3 md:w-1/4">
               City
             </th>
-            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
+            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/3 md:w-1/4">
               Venue
             </th>
-            <th className="py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/4">
+            <th className="hidden md:table-cell py-2 px-4 text-left border-b border-white text-sm md:text-xl font-semibold w-1/3 md:w-1/4">
               Link
             </th>
           </tr>
@@ -62,7 +62,7 @@ export default function ShowsTable({ shows }) {
               <td className="py-2 px-4 border-b border-white text-xs md:text-lg">
                 {show.venue}
               </td>
-              <td className="py-2 px-4 border-b border-white text-xs md:text-lg">
+              <td className="hidden md:table-cell py-2 px-4 border-b border-white text-xs md:text-lg">
                 {show.link !== 'N/A' ? (
                   <a
                     href={show.link}
