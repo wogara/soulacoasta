@@ -51,7 +51,7 @@ export default function ShowsTable({ shows }) {
             <tr
               key={show.id}
               onClick={() => openShowModal(show)}
-              className="cursor-pointer hover:bg-white hover:text-black"
+              className="cursor-pointer md:hover:bg-white md:hover:text-black"
             >
               <td className="py-2 px-4 border-b border-white text-lg">
                 {formatDate(show.date)}
@@ -68,7 +68,7 @@ export default function ShowsTable({ shows }) {
                     href={show.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="underline hover:text-black"
+                    className="underline md:hover:text-black"
                     onClick={(e) => e.stopPropagation()}
                   >
                     Link
