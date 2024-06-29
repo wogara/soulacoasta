@@ -26,6 +26,15 @@ export default async function ShowsPage() {
       return showDate >= today;
     });
 
+    // Format date in DD MON, YEAR
+    const formatDate = (date) => {
+      return new Date(date).toLocaleDateString('en-US', {
+        day: '2-digit',
+        month: 'short',
+        year: 'numeric',
+      });
+    };
+
     return (
       <main className="flex min-h-screen flex-col items-center justify-between py-24 px-2 md:px-24">
         <div className="container mx-auto p-4 relative">
@@ -51,7 +60,7 @@ export default async function ShowsPage() {
               {upcomingShows.map((show) => (
                 <tr key={show.id}>
                   <td className="py-2 px-4 border-b border-white">
-                    {new Date(show.date).toLocaleDateString()}
+                    {formatDate(show.date)}
                   </td>
                   <td className="py-2 px-4 border-b border-white">
                     {show.city}
@@ -60,7 +69,6 @@ export default async function ShowsPage() {
                     {show.venue}
                   </td>
                   <td className="py-2 px-4 border-b border-white">
-                    {console.log('show.link:', show.link)}
                     {show.link !== 'N/A' ? (
                       <a
                         href={show.link}
@@ -100,7 +108,7 @@ export default async function ShowsPage() {
               {pastShows.map((show) => (
                 <tr key={show.id}>
                   <td className="py-2 px-4 border-b border-white">
-                    {new Date(show.date).toLocaleDateString()}
+                    {formatDate(show.date)}
                   </td>
                   <td className="py-2 px-4 border-b border-white">
                     {show.city}

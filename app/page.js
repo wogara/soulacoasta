@@ -3,15 +3,20 @@ import PageArrows from '@/components/page-arrows/page-arrows';
 export default function Home() {
   return (
     <main className="relative flex min-h-screen flex-col items-center justify-between bg-black">
-      <div className="absolute inset-0 z-0 flex items-center justify-center">
+      <div
+        className="absolute inset-0 z-0 flex items-center justify-center"
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
         <picture>
-          <source srcSet="/images/giphy.webp" type="image/webp" />
-          <source srcSet="/cover.jpg" type="image/jpeg" />
+          <source srcSet="/images/soulacoasta_inverted_resized.png" type="image/png" />
           <img
-            src="/images/giphy.webp"
+            src="/images/soulacoasta_inverted_resized.png"
             alt="Background"
-            className="max-w-full max-h-full"
-            style={{ objectFit: 'contain' }}
+            style={{ objectFit: 'contain'}}
           />
         </picture>
       </div>
