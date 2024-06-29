@@ -67,19 +67,22 @@ export default function MusicPlayer() {
         className="text-white hover:text-gray-400 p-2"
         onClick={handlePreviousTrack}
       >
-        <FontAwesomeIcon icon={faStepBackward} />
+        <FontAwesomeIcon icon={faStepBackward} style={{ color: '#FED100' }} />
       </button>
       <button
         onClick={togglePlayPause}
-        className="text-white hover:text-gray-400 p-2 border border-white rounded-full h-12 w-12 flex items-center justify-center"
+        className="text-white hover:bg-black p-2 border border-white rounded-full h-12 w-12 flex items-center justify-center bg-customGreen"
       >
-        <FontAwesomeIcon icon={isPlaying ? faPause : faPlay} />
+        <FontAwesomeIcon
+          icon={isPlaying ? faPause : faPlay}
+          style={{ color: '#FED100' }}
+        />
       </button>
       <button
         className="text-white hover:text-gray-400 p-2"
         onClick={handleNextTrack}
       >
-        <FontAwesomeIcon icon={faStepForward} />
+        <FontAwesomeIcon icon={faStepForward} style={{ color: '#FED100' }} />
       </button>
     </div>
   );

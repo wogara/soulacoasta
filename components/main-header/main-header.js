@@ -24,7 +24,7 @@ export default function MainHeader() {
 
   return (
     <div>
-      <nav className="bg-black border-b-2 border-white p-4 fixed top-0 left-0 w-full z-50">
+      <nav className="bg-black border-b-2 border-customYellow p-4 fixed top-0 left-0 w-full z-50">
         <div className="flex items-center justify-between">
           <Link href="/" className="text-white text-xl" onClick={closeMenu}>
             SOULACOASTA

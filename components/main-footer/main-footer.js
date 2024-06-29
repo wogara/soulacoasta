@@ -30,14 +30,14 @@ export default function ButtonGroup() {
         <div className="flex justify-between items-center">
           <button
             onClick={openShopModal}
-            className="text-white hover:text-gray-400 p-2 border border-white h-12 w-24 flex items-center justify-center"
+            className="text-white hover:bg-black p-2 border border-white h-12 w-24 flex items-center justify-center bg-customGreen"
           >
             Shop
           </button>
           <MusicPlayer />
           <button
             onClick={openConnectModal}
-            className="text-white hover:text-gray-400 p-2 border border-white h-12 w-24 flex items-center justify-center"
+            className="text-white hover:bg-black p-2 border border-white h-12 w-24 flex items-center justify-center bg-customGreen"
           >
             Connect
           </button>
