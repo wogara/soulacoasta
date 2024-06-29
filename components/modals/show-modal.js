@@ -33,7 +33,7 @@ export default function ShowModal({ isOpen, onClose, show }) {
       >
         <button
           onClick={onClose}
-          className="absolute top-2 right-2 text-white hover:text-gray-400"
+          className="absolute top-2 right-2 text-white hover:text-gray-400 text-2xl md:text-base"
         >
           X
         </button>
