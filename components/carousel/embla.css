@@ -106,3 +106,10 @@
   height: auto;
   width: auto;
 }
+
+/* Hide buttons on mobile */
+@media (max-width: 768px) {
+  .embla__buttons {
+    display: none;
+  }
+}

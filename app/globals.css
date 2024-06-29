@@ -3,8 +3,8 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'VT323';
-  src: url('/fonts/Audioside-Regular.ttf') format('truetype');
+  font-family: 'Audiowide';
+  src: url('/fonts/Audiowide-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -12,7 +12,7 @@
 /* Custom global styles */
 body {
   @apply bg-black text-white;
-  font-family: 'VT323', sans-serif;
+  font-family: 'Audiowide', sans-serif;
 }
 
 /* Custom utility class */
