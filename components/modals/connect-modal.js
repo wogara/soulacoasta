@@ -1,5 +1,5 @@
+
 'use client';
-import { supabase } from '@/lib/db';
 
 import { useState, useEffect, useRef } from 'react';
 
@@ -24,17 +24,11 @@ export default function ConnectModal({ isOpen, onClose }) {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isOpen, onClose]);
-  const handleSubmit = async (e) => {
-   e.preventDefault();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     console.log(`Email submitted: ${email}`);
     setSubmitted(true);
-    const { data, error } = await supabase.from('emails').insert([{ email }]);
-
-    if (error) {
-      console.error('Error inserting email:', error);
-    } else {
-      console.log('Email inserted successfully:', data);
-    }
     // Optionally, you can send the email to your server or an API here
   };
 
@@ -61,66 +55,71 @@ export default function ConnectModal({ isOpen, onClose }) {
           <p className="mb-4">E-mail: soulacoastainc@gmail.com</p>
         </div>
 
-        <h3 className="text-xl mb-1">Socials</h3>
-        <p className="mb-0">
-          <a
-            href="https://www.instagram.com/soulacoasta/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Instagram
-          </a>
-        </p>
-        <p className="mb-0">
-          <a
-            href="https://www.tiktok.com/@isoulacoasta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Tiktok
-          </a>
-        </p>
-        <p className="mb-0">
-          <a
-            href="https://www.twitter.com/soulacoasta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Twitter
-          </a>
-        </p>
-        <p className="mb-4"></p>
+        <div className="flex flex-col md:flex-row md:space-x-10">
+        <div>
+            <h3 className="text-xl mb-1">Music</h3>
+            <p className="mb-0">
+              <a
+                href="https://soundcloud.com/soula-coasta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Soundcloud
+              </a>
+            </p>
+            <p className="mb-0">
+              <a
+                href="https://soulacoasta.bandcamp.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Bandcamp
+              </a>
+            </p>
+            <p className="mb-0">
+              <a
+                href="https://www.youtube.com/@soulacoasta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Youtube
+              </a>
+            </p>
+            <p className="mb-0">Spotify (Coming Soon)</p>
+            <p className="mb-0">Apple Music (Coming Soon)</p>
+          </div>
+          <div className="mb-4 md:mb-0">
+            <h3 className="text-xl mb-1">Socials</h3>
+            <p className="mb-0">
+              <a
+                href="https://www.instagram.com/soulacoasta/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Instagram
+              </a>
+            </p>
+            <p className="mb-0">
+              <a
+                href="https://www.tiktok.com/@isoulacoasta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Tiktok
+              </a>
+            </p>
+            <p className="mb-0">
+              <a
+                href="https://www.twitter.com/soulacoasta"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Twitter
+              </a>
+            </p>
+          </div>
 
-        <h3 className="text-xl mb-1">Music</h3>
-        <p className="mb-0">
-          <a
-            href="https://soundcloud.com/soula-coasta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Soundcloud
-          </a>
-        </p>
-        <p className="mb-0">
-          <a
-            href="https://soulacoasta.bandcamp.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Bandcamp
-          </a>
-        </p>
-        <p className="mb-0">
-          <a
-            href="https://www.youtube.com/@soulacoasta"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Youtube
-          </a>
-        </p>
-        <p className="mb-0">Spotify (Coming Soon)</p>
-        <p className="mb-0">Apple Music (Coming Soon)</p>
+        </div>
 
         <hr className="border-t border-gray-600 my-4" />
         <div>
