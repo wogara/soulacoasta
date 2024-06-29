@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
@@ -56,7 +55,7 @@ export default function ConnectModal({ isOpen, onClose }) {
         </div>
 
         <div className="flex flex-col md:flex-row md:space-x-10">
-        <div>
+          <div>
             <h3 className="text-xl mb-1">Music</h3>
             <p className="mb-0">
               <a
@@ -118,7 +117,6 @@ export default function ConnectModal({ isOpen, onClose }) {
               </a>
             </p>
           </div>
-
         </div>
 
         <hr className="border-t border-gray-600 my-4" />
