@@ -19,7 +19,7 @@ export default function PageArrows({ direction, link }) {
       href={link}
       className={`absolute ${directionClass} top-1/2 transform -translate-y-1/2 cursor-pointer hidden md:block`}
     >
-      <FontAwesomeIcon icon={icon} />
+      <FontAwesomeIcon icon={icon} size="3x"/>
     </Link>
   );
 }
