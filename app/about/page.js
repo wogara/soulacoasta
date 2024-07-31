@@ -3,12 +3,12 @@ import PageArrows from '@/components/page-arrows/page-arrows';
 import { fetchData } from '@/lib/sanity';
 import { urlFor } from '@/lib/sanityImage';
 export default async function AboutPage() {
-  const query = '*[_type == "imageAsset" && title == "about page image"]{title, image}';
+  const query =
+    '*[_type == "imageAsset" && title == "about page image"]{title, image}';
   //const query = '*[_type == "imageAsset"]{title, image}';
   const images = await fetchData(query);
-  console.log('what');
-  console.log('images: ' + images);
   const aboutImage = images.length > 0 ? images[0] : null;
+
   return (
     <main
       className="
@@ -75,7 +75,7 @@ export default async function AboutPage() {
           </div>
           <div className="w-1/2 p-8">
             <Image
-              src={urlFor(aboutImage.image).url()} // replace with your image path
+              src={urlFor(aboutImage.image)} // replace with your image path
               alt="About Image"
               width={500}
               height={500}
@@ -90,7 +90,7 @@ export default async function AboutPage() {
         <div className="lg:hidden relative w-full max-w-3xl h-screen p-0">
           <div className="fixed inset-0 z-0">
             <Image
-              src={urlFor(aboutImage.image).url()} // replace with your image path
+              src={urlFor(aboutImage.image)} // replace with your image path
               alt="About Image"
               fill
               style={{ objectFit: 'cover' }}

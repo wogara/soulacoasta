@@ -27,7 +27,6 @@ const EmblaCarousel = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   const setTweenNodes = useCallback((emblaApi) => {
-    console.log('tween nodes');
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
       return slideNode.querySelector('.embla__slide__number');
     });
@@ -38,7 +37,6 @@ const EmblaCarousel = (props) => {
   }, []);
 
   const updateSlideClasses = useCallback((emblaApi) => {
-    console.log('update classes');
     const slides = emblaApi.slideNodes();
     const centerIndex = emblaApi.selectedScrollSnap();
     slides.forEach((slide, index) => {
@@ -51,11 +49,9 @@ const EmblaCarousel = (props) => {
   }, []);
 
   const tweenScale = useCallback((emblaApi, eventName) => {
-    console.log('tween scale with event: ' + eventName);
     const engine = emblaApi.internalEngine();
     const scrollProgress = emblaApi.scrollProgress();
     const slidesInView = emblaApi.slidesInView();
-    console.log(slidesInView);
     const isScrollEvent = eventName === 'scroll';
 
     emblaApi.scrollSnapList().forEach((scrollSnap, snapIndex) => {
