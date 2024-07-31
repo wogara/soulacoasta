@@ -8,29 +8,42 @@ import {
   faStepForward,
   faStepBackward,
 } from '@fortawesome/free-solid-svg-icons';
+import { fetchData } from '@/lib/sanity';
 
 export default function MusicPlayer() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+  const [tracks, setTracks] = useState([]);
   const audioRef = useRef(null);
-  const tracks = ['/audio/SOULACOASTA.mp3','/audio/futera_riddim_I.mp3','/audio/stick_it_XII.mp3'];
+  //const tracks = ['/audio/SOULACOASTA.mp3','/audio/futera_riddim_I.mp3','/audio/stick_it_XII.mp3'];
+  //
+  useEffect(() => {
+    async function fetchTracks() {
+      const query = '*[_type == "song"]{title, "url": file.asset->url}';
+      const fetchedTracks = await fetchData(query);
+      setTracks(fetchedTracks);
+    }
+    fetchTracks();
+  }, []);
 
   useEffect(() => {
-    const audio = new Audio(tracks[currentTrackIndex]);
-    audio.preload = 'auto';
-    audioRef.current = audio;
+    if (tracks.length > 0) {
+      const audio = new Audio(tracks[currentTrackIndex].url);
+      audio.preload = 'auto';
+      audioRef.current = audio;
 
-    audio.onended = () => {
-      handleNextTrack();
-    };
+      audio.onended = () => {
+        handleNextTrack();
+      };
 
-    return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current = null;
-      }
-    };
-  }, [currentTrackIndex]);
+      return () => {
+        if (audioRef.current) {
+          audioRef.current.pause();
+          audioRef.current = null;
+        }
+      };
+    }
+  }, [currentTrackIndex, tracks]);
 
   const togglePlayPause = () => {
     if (audioRef.current) {
