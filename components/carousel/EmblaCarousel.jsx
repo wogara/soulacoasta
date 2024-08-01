@@ -1,6 +1,7 @@
 'use client';
 import { useCallback, useEffect, useRef } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
+import Image from 'next/image';
 import './embla.css';
 import {
   NextButton,
@@ -39,13 +40,6 @@ const EmblaCarousel = (props) => {
   const updateSlideClasses = useCallback((emblaApi) => {
     const slides = emblaApi.slideNodes();
     const centerIndex = emblaApi.selectedScrollSnap();
-    slides.forEach((slide, index) => {
-      if (index === centerIndex) {
-        //slide.classList.remove('embla__slide__waiting');
-      } else {
-        //slide.classList.add('embla__slide__waiting');
-      }
-    });
   }, []);
 
   const tweenScale = useCallback((emblaApi, eventName) => {
@@ -111,8 +105,10 @@ const EmblaCarousel = (props) => {
           {slides.map((index) => (
             <div className="embla__slide" key={index}>
               <div className="embla__slide__number">
-                <img
+                <Image
                   src={index}
+                  width={500}
+                  height={500}
                   alt={`Slide ${index}`}
                   className="embla__slide__image"
                 />
