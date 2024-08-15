@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import QrCode from '../qr-code/QrCode';
 
 export default function DonationModal({ isOpen, onClose }) {
-  const [selectedTab, setSelectedTab] = useState('venmo');
+  const [selectedTab, setSelectedTab] = useState('cashapp');
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -39,35 +39,18 @@ export default function DonationModal({ isOpen, onClose }) {
         >
           X
         </button>
-        <div className="flex space-x-4 mb-4">
-          <button
-            className={`text-white ${selectedTab === 'venmo' ? 'font-bold' : ''}`}
-            onClick={() => setSelectedTab('venmo')}
-          >
-            Venmo
-          </button>
-          <button
-            className={`text-white ${selectedTab === 'cashapp' ? 'font-bold' : ''}`}
-            onClick={() => setSelectedTab('cashapp')}
-          >
-            CashApp
-          </button>
-          <button
-            className={`text-white ${selectedTab === 'paypal' ? 'font-bold' : ''}`}
-            onClick={() => setSelectedTab('paypal')}
-          >
-            PayPal
-          </button>
-        </div>
-        <h1 className="text-2xl text-center mb-4">
+        <h1 className="text-2xl text-center mb-0">
           {selectedTab.charAt(0).toUpperCase() + selectedTab.slice(1)}
         </h1>
+        <div className="flex justify-center items-center flex-1">
+          <h2><a className="underline" href="https://cash.app/$marlonrlando">$marlonrlando</a></h2>
+        </div>
         <div className="flex justify-center items-center flex-1">
           {selectedTab === 'venmo' && (
             <QrCode link={'https://venmo.com/username'} />
           )}
           {selectedTab === 'cashapp' && (
-            <QrCode link={'https://cash.app/$username'} />
+            <QrCode link={'https://cash.app/$marlonrlando'} />
           )}
           {selectedTab === 'paypal' && (
             <QrCode link={'https://paypal.me/username'} />
