@@ -1,6 +1,6 @@
-'use client';
-
 import { useState, useEffect, useRef } from 'react';
+import { urlFor } from '@/lib/sanityImage';
+import Image from 'next/image';
 
 export default function ShowModal({ isOpen, onClose, show }) {
   const modalRef = useRef(null);
@@ -26,6 +26,7 @@ export default function ShowModal({ isOpen, onClose, show }) {
   }
 
   return (
+
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
       <div
         ref={modalRef}
@@ -37,9 +38,8 @@ export default function ShowModal({ isOpen, onClose, show }) {
         >
           X
         </button>
-        <img src={show.flyer} alt="Flyer" className="w-1/2 h-auto rounded" />
+        <Image src={urlFor(show.image)} loading='eager' width={500} height={500} alt="Flyer" className="w-1/2 h-auto rounded" />
         <div className="ml-8">
-          <h1 className="text-2xl text-center mb-4">{show.title}</h1>
           <p className="text-white mb-2">
             <strong>Date:</strong> {new Date(show.date).toLocaleDateString()}
           </p>

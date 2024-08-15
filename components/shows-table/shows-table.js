@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react';
 import ShowModal from '../modals/show-modal';
+import Head from 'next/head';
+import { urlFor } from '@/lib/sanityImage';
 
 export default function ShowsTable({ shows }) {
   const [isShowModalOpen, setIsShowModalOpen] = useState(false);
@@ -29,6 +31,17 @@ export default function ShowsTable({ shows }) {
 
   return (
     <>
+      <Head>
+        {shows.map((show) => (
+          <link
+            key={show.title}
+            rel="preload"
+            as="image"
+            href={urlFor(show.image)}
+          />
+        ))}
+      </Head>
+
       <table className="min-w-full bg-black mb-8">
         <thead>
           <tr>
@@ -49,7 +62,7 @@ export default function ShowsTable({ shows }) {
         <tbody>
           {shows.map((show) => (
             <tr
-              key={show.id}
+              key={show.date}
               onClick={() => openShowModal(show)}
               className="cursor-pointer md:hover:bg-white md:hover:text-black"
             >
